@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Instruction Document: Vallianz Newbuilding Engineering Q&A Gem</title>
+    <style>
+        :root {
+            --primary-color: #0B3C5D;
+            --secondary-color: #328CC1;
+            --dark-neutral: #1D2731;
+            --light-neutral: #F9F9F9;
+            --accent-color: #D9B310;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-neutral);
+            background-color: var(--light-neutral);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 12px;
+            font-size: 2.2rem;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .meta-box {
+            background-color: #EDF4F8;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .meta-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .meta-box td {
+            padding: 4px 10px;
+            font-size: 0.95rem;
+        }
+
+        .meta-box td.label {
+            font-weight: bold;
+            color: var(--primary-color);
+            width: 15%;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table.data-table th, table.data-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        table.data-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        table.data-table tr:nth-child(even) {
+            background-color: #F2F6F9;
+        }
+
+        .qa-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .qa-question {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .qa-question::before {
+            content: "Q:";
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-right: 10px;
+            line-height: 1;
+        }
+
+        .qa-answer {
+            border-top: 1px dashed var(--border-color);
+            padding-top: 10px;
+        }
+
+        .qa-answer-block {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .qa-answer-block::before {
+            content: "A:";
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-right: 10px;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        .qa-content {
+            width: 100%;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .warning-note {
+            background-color: #FFF9E6;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Project Instruction Document: Vallianz Newbuilding Engineering Q&A</h1>
+    
+    <div class="meta-box">
+        <table>
+            <tr>
+                <td class="label">Objective:</td>
+                <td>Establish a centralized, verified repository of technical, regulatory, and class compliance knowledge for Vallianz Engineering (VSE) Project Engineers.</td>
+                <td class="label">Initiated By:</td>
+                <td>Technical Superintendent / BV Class Surveyor & Auditor</td>
+            </tr>
+            <tr>
+                <td class="label">Timeline:</td>
+                <td>June &ndash; December 2026 (Phased Rollout)</td>
+                <td class="label">Target Platform:</td>
+                <td>Custom Gemini Knowledge Base (Gem)</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>1. Content Architecture & Core Categories</h2>
+    <p>The Gem must organize all input data across eight distinct pillars to support logical context retrieval:</p>
+    <ul>
+        <li><strong>Category 1: Flag Registration Workflows</strong> &ndash; Jurisdictional protocols, forms, and agency handoffs.</li>
+        <li><strong>Category 2: IMO Compliance & Core Numbers</strong> &ndash; Contractual application triggers and sequence rules.</li>
+        <li><strong>Category 3: Hull Identification Basics</strong> &ndash; Title block rules, yard variations, and multi-vessel series splits.</li>
+        <li><strong>Category 4: Class Notations & Equivalencies</strong> &ndash; Client tender adherence, ABS baseline comparisons, and Class certificates.</li>
+        <li><strong>Category 5: Vessel Manuals & Deliverables</strong> &ndash; As-built documentation requirements and operational tech files.</li>
+        <li><strong>Category 6: Engineering Review Standards</strong> &ndash; Internal design checking protocols and validation loops.</li>
+        <li><strong>Category 7: Newbuilding Surveys & Milestones</strong> &ndash; Survey triggers, physical inspect intervals, and statutory validation.</li>
+        <li><strong>Category 8: Next-Gen Marine Tech</strong> &ndash; Directives for battery hybrid configurations and autonomous systems.</li>
+    </ul>
+
+    <h2>2. Project Roadmap & Milestone Phases (2026)</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Phase</th>
+                <th>Target Timeline (2026)</th>
+                <th>Focus Areas</th>
+                <th>Deliverables & Benchmarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Phase 1</strong></td>
+                <td>June &ndash; July</td>
+                <td>Categories 1, 2, 3 & 4</td>
+                <td>Hardcode foundational logic: Flag documentation ownership, IMO timeline constraints, split hull drawing protocols, and class notation equivalency workflows.</td>
+            </tr>
+            <tr>
+                <td><strong>Phase 2</strong></td>
+                <td>August &ndash; September</td>
+                <td>Categories 5 & 6</td>
+                <td>Integrate statutory vessel manuals checklist and structure drawing/design internal validation review cycles.</td>
+            </tr>
+            <tr>
+                <td><strong>Phase 3</strong></td>
+                <td>October &ndash; November</td>
+                <td>Categories 7 & 8</td>
+                <td>Define construction survey milestones and map compliance framework for alternative fuels/battery/hybrid installations.</td>
+            </tr>
+            <tr>
+                <td><strong>Phase 4</strong></td>
+                <td>December</td>
+                <td>System Integration & Review</td>
+                <td>Cross-check end-to-end edge cases, execute user testing with junior PEs, and lock down change management controls.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Tone and Audience Alignment Guidelines</h2>
+    <ul>
+        <li><strong>Direct & Actionable:</strong> Content must immediately answer "Who is responsible?" and "When must this occur?" to assist busy project teams.</li>
+        <li><strong>Professional & Multi-tiered:</strong> Explanations must remain technically robust enough for Senior Project Managers while offering sufficient contextual clarity for Junior Project Engineers.</li>
+        <li><strong>Regulatory Rigor:</strong> Always reference the specific underlying driving mechanism (e.g., SOLAS, Flag Administration rules, Client Tender specifications) so the engineering logic is indisputable.</li>
+    </ul>
+
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+
+    <h2>4. Phase 1 Production Knowledge Base (Hardcoded Content)</h2>
+    <p>The following Q&A modules represent the verified operational protocols for Phase 1 and are fully active within the Gem's operating core.</p>
+
+    <!-- Q&A 1: FLAG REGISTRATION DOCS -->
+    <div class="qa-card">
+        <span class="badge">Category 1: Flag Registration Workflows</span>
+        <div class="qa-question">
+            The Tuvalu Ship Registry is requesting specific statutory documentation for a newbuild (specifically Form S1, Declaration for ISM/DPA/CSO, and SMC/ISSC/MLC as per image_1d843f.png). Who is responsible for providing these, and how do we handle vessels operated by our counterpart, RVOS?
+        </div>
+        <div class="qa-answer">
+            <div class="qa-answer-block">
+                <div class="qa-content">
+                    <p>These specific items are strictly governed under the <strong>SOLAS ISM Code, ISPS Code, and MLC regulations</strong>. Because they dictate the long-term operational safety and security framework of the vessel, the delivery responsibilities are split as follows:</p>
+                    <ul>
+                        <li><strong>Primary Rule:</strong> These documents <strong>shall be provided by the appointed Ship's Manager</strong>. They are not within the newbuilding design engineering or shipyard production baseline scope.</li>
+                        <li><strong>Vessels Operated by RVOS:</strong> For any vessel slated to be operated by our counterpart, Rawabi Vallianz Offshore Services (RVOS), the Project Engineer (PE) must coordinate directly with the <strong>RVOS HSE (Health, Safety, and Environment) Department</strong> to obtain the paperwork.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Q&A 2: IMO NUMBER APPLICATION -->
+    <div class="qa-card">
+        <span class="badge">Category 2: IMO Compliance & Core Numbers</span>
+        <div class="qa-question">
+            What is the timeline and responsibility framework for securing an IMO number for a newbuilding contract, and how does flag registration change for 3rd party vessels?
+        </div>
+        <div class="qa-answer">
+            <div class="qa-answer-block">
+                <div class="qa-content">
+                    <p>Securing the vessel's unique IMO identity follows an uncompromising technical timeline linked strictly to commercial contracts:</p>
+                    <ul>
+                        <li><strong>Application Trigger:</strong> The Yard/Builder is legally responsible to apply for the IMO number immediately upon the <strong>Shipbuilding Contract (SBC) being signed</strong>.</li>
+                        <li><strong>Critical Timeline Point:</strong> The IMO number <strong>must be obtained before the keel is laid</strong>.</li>
+                        <li><strong>PE Action:</strong> The Project Engineer (PE) is responsible for proactively requesting this number from the yard and officially sharing it with both <strong>Class and Flag</strong> administrations.</li>
+                        <li><strong>Commercial Flag Assignment Matrix:</strong> An IMO number is mandatory to apply for flag registration (e.g., Tuvalu flag). Responsibility splits based on ownership:
+                            <ul>
+                                <li><strong>RVOS Vessels:</strong> PE executes the application, but the actual financial payment is settled via the <strong>RVOS Account</strong>.</li>
+                                <li><strong>3rd Party Vessels:</strong> Flag registration is the exclusive responsibility of the external <strong>Owner/Operator</strong>. It is entirely outside the scope of both VSE and RVOS.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Q&A 3: HULL DESIGN & DRAWING LOGIC -->
+    <div class="qa-card">
+        <span class="badge">Category 3: Hull Identification Basics</span>
+        <div class="qa-question">
+            How must hull numbers be integrated into basic designer drawings for Class submission, and what is the protocol if a single series design of 10 vessels is split across 4 different shipyards?
+        </div>
+        <div class="qa-answer">
+            <div class="qa-answer-block">
+                <div class="qa-content">
+                    <p>The hull number is the unique identification footprint assigned by the builder/yard and is a critical prerequisite used to apply for the IMO number. PEs must enforce the following drawing control rules:</p>
+                    <ul>
+                        <li><strong>Title Block Control:</strong> The PE must ensure the yard hull number is permanently inserted into the basic designer drawing's title block prior to Class submission. Each individual drawing must capture at least one hull number.</li>
+                        <li><strong>Standard Series Design:</strong> If a series of vessels utilizes the exact same design, a drawing may list multiple hull numbers in the title block (e.g., one drawing listing all 10 hull numbers for a 10-vessel series built to identical specifications).</li>
+                        <li><strong>Multi-Yard Variance Split Strategy:</strong> When a 10-vessel series is split across 4 separate yards, drawing separation is governed entirely by equipment procurement types:
+                            <ul>
+                                <li><strong>YFE (Yard-Furnished Equipment):</strong> If different yards source alternative equipment that alters foundations, weights, or layouts, these changes <strong>affect the basic design</strong>. The affected drawings <strong>must be split</strong> based on the specific yard's hull numbers.</li>
+                                <li><strong>OFE (Owner-Furnished Equipment):</strong> If the equipment is identical across all locations, the <strong>design remains completely unchanged</strong>. The same unified drawing must be used, listing all 10 hull numbers across all 4 yards.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Q&A 4: CLASS NOTATION SELECTION -->
+    <div class="qa-card">
+        <span class="badge">Category 4: Class Notations & Equivalencies</span>
+        <div class="qa-question">
+            What are the core engineering rules for selecting Class Notations during design and bidding phases, especially concerning major clients like Saudi Aramco versus external 3rd parties?
+        </div>
+        <div class="qa-answer">
+            <div class="qa-answer-block">
+                <div class="qa-content">
+                    <p>Class notations dictate the explicit structural and systemic design parameters of the build. PEs must navigate compliance according to the following client tier constraints:</p>
+                    <ul>
+                        <li><strong>The Compliance Chain:</strong> All chosen notations must follow a strict, unbroken progression: 
+                        <br><strong style="color:var(--primary-color);">Client Tender Document &rarr; Request for Class (RFC) &rarr; Final Class Certificate</strong>.</li>
+                        <li><strong>Saudi Aramco Baseline (ABS Equivalency):</strong> Saudi Aramco baseline specifications typically mandate <strong>ABS class notations</strong>. When VSE introduces alternative classification societies (such as <strong>BV</strong> or <strong>RINA</strong>), the PE must actively request equivalent class notations to be offered.</li>
+                        <li><strong>Handling Technical Ambiguity:</strong> If any dispute arises regarding cross-society compliance, the PE must compel the proposing Class society to provide a <strong>formal written statement</strong> confirming that their proposed notation is fully equivalent to the client's requested ABS notation.</li>
+                        <li><strong>Non-Saudi Aramco Tenders (e.g., KJO, Taiwan Clients):</strong> Notations are dictated entirely by the localized client scope of work. 
+                        <br><strong>The Minimum Notation Rule:</strong> PEs must offer the absolute minimum class notation configuration required to fulfill the technical tender. Do not append unsolicited or auxiliary notations, as they carry compounding design burdens and heavy <strong>associated class costs</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
